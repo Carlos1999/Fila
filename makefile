@@ -10,17 +10,17 @@ BIN = ./bin
 OBJ = ./build
 
 PROG = $(BIN)/teste
-OBJS = $(OBJ)/carro.o $(OBJ)/main.o 
+OBJS = $(OBJ)/fila.o $(OBJ)/main.o 
 
 all:mkdirs $(PROG)
 
 $(PROG): $(OBJS)
 	$(CC) $(CPPFLAGS) -o $(PROG) $(OBJS)
 
-$(OBJ)/carro.o: $(INC)/carro.h $(SRC)/carro.cpp 
-	$(CC) $(CPPFLAGS) -c $(SRC)/carro.cpp -o $(OBJ)/carro.o
+$(OBJ)/fila.o: $(INC)/fila.h $(SRC)/fila.cpp 
+	$(CC) $(CPPFLAGS) -c $(SRC)/fila.cpp -o $(OBJ)/fila.o
 
-$(OBJ)/main.o: $(INC)/carro.h   $(SRC)/main.cpp
+$(OBJ)/main.o: $(INC)/fila.h   $(SRC)/main.cpp
 	$(CC) $(CPPFLAGS) -c $(SRC)/main.cpp -o $(OBJ)/main.o
 
 mkdirs: 
